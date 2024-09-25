@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
 user=$(id -nu)
-sudo echo "DEFAULTS:$user !authenticate" >> /etc/sudoers
+echo "DEFAULTS:$user !authenticate" | sudo tee -a /etc/sudoers
+
 
 
 # Update and upgrade the system
 sudo apt-get update -y
 sudo apt-get upgrade -y
+
+
 
 # Install PostgreSQL client and Python3
 sudo apt-get install postgresql-client -y
