@@ -11,7 +11,7 @@ sudo apt-get upgrade -y
 # Install PostgreSQL client and Python3
 sudo apt-get install postgresql-client -y
 sudo apt-get install python3 python3-pip -y
-sudo apt-get install vim curl
+sudo apt-get install vim curl -y
 # Install psycopg2 library for PostgreSQL interaction
 pip3 install psycopg2-binary
 
@@ -22,6 +22,8 @@ export PGUSER=$DB_USER
 export PGHOST=$DB_HOST
 export PGDATABSE=$DB_NAME
 EOF
+
+. ~/.bashrc
 
 psql -c "DROP TABLE IF EXISTS person"
 
