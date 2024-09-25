@@ -20,7 +20,10 @@ export PGUSER=$DB_USER
 export PGHOST=$DB_HOST
 export PGDATABSE=$DB_NAME
 EOF
-source ~/.bashrc
+export PGPASSWORD=$DB_PASSWORD
+export PGUSER=$DB_USER
+export PGHOST=$DB_HOST
+export PGDATABSE=$DB_NAME
 
 psql -c "DROP TABLE IF EXISTS person"
 
