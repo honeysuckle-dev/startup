@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
 user=$(id -nu)
-echo "DEFAULTS:$user !authenticate" | sudo tee -a /etc/sudoers
-
-
+echo "Defaults:$user !authenticate" | sudo tee -a /etc/sudoers
 
 # Update and upgrade the system
 sudo apt-get update -y
 sudo apt-get upgrade -y
-
-
-
 # Install PostgreSQL client and Python3
 sudo apt-get install postgresql-client -y
 sudo apt-get install python3 python3-pip -y
@@ -25,11 +20,9 @@ export PGUSER=$DB_USER
 export PGHOST=$DB_HOST
 export PGDATABSE=$DB_NAME
 EOF
-
-. ~/.bashrc
+source ~/.bashrc
 
 psql -c "DROP TABLE IF EXISTS person"
-
 
 psql -c "
 CREATE TABLE person (
