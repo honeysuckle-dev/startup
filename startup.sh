@@ -39,6 +39,6 @@ INSERT INTO person (first_name, last_name, age) VALUES
 ('Alice', 'Smith', 30),
 ('Bob', 'Johnson', 25),
 ('Charlie', 'Brown', 35),
-('Daisy', 'Miller', 28),
-('Edward', 'Wilson', 40);
+('Daisy', 'Miller', 9),
+('Edward', 'Wilson', 10);
 "
